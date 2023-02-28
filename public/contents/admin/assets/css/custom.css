@@ -1,0 +1,38 @@
+.table_wraper{
+    height: 550px;
+    padding-right: 10px;
+}
+.last {
+
+}
+.page-content{
+    padding-bottom: 0;
+}
+
+.table_action{
+    text-align: right;
+
+}
+
+.table_action ul{
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   display: inline-flex;
+   gap: 10px;
+}
+.table_action ul li a{
+line-height: 25px;
+}
+.card_style{
+    padding: 16px;
+}
+
+.pagination{
+    margin-bottom: 0;
+}
+
+tr td,
+tr th{
+    vertical-align: middle;
+}
