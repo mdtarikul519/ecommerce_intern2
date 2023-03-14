@@ -69,8 +69,6 @@
                                           others
                                       </label>
                                 </div>
-
-
           
                                 <div class="form-group mb-3">
                                     <label for="">image</label>
@@ -95,6 +93,7 @@
                                     <thead>
                                         <tr>
                                             <th>title</th>
+                                            <th>Description</th>
                                             <th>role</th>
                                             <th>hobby</th>
                                             <th>image</th>
@@ -107,6 +106,7 @@
                                         
                                              <tr>
                                                 <td>{{ $item->title }}</td>
+                                                <td>{{ $item->Description }}</td>
                                                 <td>{{ $item->role }}</td>
                                                 <td>
                                                  @if ($item->hobbies->count())
@@ -120,10 +120,15 @@
                                                  @endif
                                                 </td>
                                                 <td>
-                                                    <img src="/{{ $item->image }}" height="100px" alt="">
+                                                    <img src="/{{ $item->image }}" height="100px" width="100px" alt="">
                                                   
                                                 </td>
                                                 <td>{{ $item->gender }}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-sm btn-info">show</a>
+                                                    <a href="#" class="btn btn-sm btn-warning mx-2">edit</a>
+                                                    <a href="#" class="btn btn-sm btn-danger">delete</a>
+                                                </td>
                                             </tr> 
                                           @endforeach
                                     </tbody>

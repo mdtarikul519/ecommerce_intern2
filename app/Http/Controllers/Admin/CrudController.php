@@ -16,7 +16,7 @@ class CrudController extends Controller
          'hobbies' => function($q){
          return $q->select('hobbies.id','hobbies.title');
          }
-      ])->paginate('10');
+      ])->paginate('20');
       $hobbies= Hobby::get();
        return view('admin.crud.index',compact( 'data','all_data','hobbies' ));
    }
@@ -27,6 +27,7 @@ class CrudController extends Controller
     
    $crud->title = request()->title;
    $crud->Description = request()->Description;
+   $crud->role = request()->role;
    $crud->gender = request()->gender;
    $crud->slug = request()->slug;
    $crud->save();
