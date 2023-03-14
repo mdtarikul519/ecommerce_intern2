@@ -46,32 +46,27 @@
 
                                 <div class="form-group mb-3">
                                     <label>Hobby::</label>
-                                      <label for="gardining">
-                                        <input type="checkbox" value="gardining" id="gardining" name="hobby[]">
-                                          gardining
-                                      </label>
-                                      <label for="reding">
-                                        <input type="checkbox" value="reding" id="reding" name="hobby[]">
-                                        reding
-                                      </label>
-                                      <label for="sweeming">
-                                        <input type="checkbox"  value="sweeming" id="sweeming" name="hobby[]">
-                                          sweeming
-                                      </label>
+                                @foreach($hobbies as $item) 
+                                  <label for="gardining{{ $item->id}}">
+                                    <input type="checkbox" value="{{ $item->id}}" id="gardining{{ $item->id}}" name="hobby[]">
+                                       {{ $item->title}}
+                                    </label>
+                                @endforeach
+                                     
                                 </div>
                                 <div class="form-group mb-3">
                                     <label>Gender::</label>
                                       <label for="female">
                                         <input type="radio" value="female" id="female" name="gender">
-                                          female
+                                          male
                                       </label>
                                       <label for="others">
                                         <input type="radio" value="others" id="others" name="gender">
-                                        others
+                                        female
                                       </label>
                                       <label for="sweeming">
                                         <input type="radio"  value="sweeming" id="sweeming" name="gender">
-                                          sweeming
+                                          others
                                       </label>
                                 </div>
 
@@ -82,7 +77,7 @@
                                     <input type="file" name="image" class="form-control">
                                 </div>
                                 <button>Submit</button>
-
+                                   
                             </div>
                         </div>
                     </div>
@@ -109,15 +104,18 @@
                                     </thead>
                                      <tbody>
                                           @foreach ($all_data as $item)
+                                        
                                              <tr>
                                                 <td>{{ $item->title }}</td>
                                                 <td>{{ $item->role }}</td>
                                                 <td>
-                                                 @if ($item->hobby)
+                                                 @if ($item->hobbies->count())
                                                     <ol>
-                                                        @foreach ( json_decode($item->hobby) as $hobby)
-                                                           <li>{{ $hobby }}</li>
+                                                        @foreach ( $item->hobbies as $hobby)
+                                                      
+                                                           <li>{{ $hobby->title }}</li>
                                                         @endforeach
+                                        
                                                     </ol>
                                                  @endif
                                                 </td>

@@ -51,5 +51,6 @@ class CreateCrudModelsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('crud_models');
+        Schema::dropIfExists('crud_model_hobby');
     }
 }

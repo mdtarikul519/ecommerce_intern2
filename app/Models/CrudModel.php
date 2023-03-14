@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CrudModel extends Model
 {
     use HasFactory;
+
+    public function hobbies(){
+        return $this->belongsToMany(Hobby::class);
+
+    }
 }
