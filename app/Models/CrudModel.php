@@ -11,6 +11,10 @@ class CrudModel extends Model
 
     public function hobbies(){
         return $this->belongsToMany(Hobby::class);
+    }
+
+    public function user_roles(){
+        return $this->belongsTo(UserRole::class,'role','serial');
 
     }
 }

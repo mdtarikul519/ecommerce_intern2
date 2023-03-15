@@ -42,7 +42,8 @@ Route::group(['prefix' => 'crud',], function () {
 
     Route::get('/index', [CrudController::class, 'index'])->name('dashboard.crud.index');
     Route::post('/create', [CrudController::class, 'store'])->name('dashboard.crud.store');
-
+    Route::get('/edit/{id}', [CrudController::class, 'edit'])->name('dashboard.crud.edit');
+    Route::post('/update', [CrudController::class, 'update'])->name('dashboard.crud.update');
     Route::get('/show/{id}', [CrudController::class, 'show'])->name('dashboard.crud.show');
     Route::get('/destroy/{id}', [CrudController::class, 'destroy'])->name('dashboard.crud.destroy');
 });
