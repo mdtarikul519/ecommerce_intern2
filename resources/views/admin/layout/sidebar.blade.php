@@ -93,6 +93,16 @@
                         <li><a href="{{route('dashboard.department.create')}}" key="t-level-2-1">create</a></li>
                     </ul>
                 </li>
+
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2"><i class="bx bx-comment-dots"></i> CrudBook</a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('dashboard.crudbook.index')}}" key="t-level-2-1">index</a></li>
+                        <li><a href="{{route('dashboard.crudbook.create')}}" key="t-level-2-1">create</a></li>
+                    </ul>
+                </li>
+                
             </ul>
         </li>
     </ul>

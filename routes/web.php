@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\CrudBookController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserdController;
@@ -38,15 +39,6 @@ route::group(['prfix' => 'admin', 'Middleware' => ['auth'], 'namespace' => 'admi
 
 
 
-Route::group(['prefix' => 'crud',], function () {
-
-    Route::get('/index', [CrudController::class, 'index'])->name('dashboard.crud.index');
-    Route::post('/create', [CrudController::class, 'store'])->name('dashboard.crud.store');
-    Route::get('/edit/{id}', [CrudController::class, 'edit'])->name('dashboard.crud.edit');
-    Route::post('/update', [CrudController::class, 'update'])->name('dashboard.crud.update');
-    Route::get('/show/{id}', [CrudController::class, 'show'])->name('dashboard.crud.show');
-    Route::get('/destroy/{id}', [CrudController::class, 'destroy'])->name('dashboard.crud.destroy');
-});
 
 Route::group(['prefix' => 'contact',], function () {
 
@@ -121,4 +113,26 @@ Route::group(['prefix' => 'department',], function () {
     Route::post('update/{id}', [StudentController::class, 'update'])->name('dashboard.department.update');
     Route::get('destroy/{id}', [StudentController::class, 'destroy'])->name('dashboard.department.destroy');
 });
+
+Route::group(['prefix' => 'crud',], function () {
+
+    Route::get('/index', [CrudController::class, 'index'])->name('dashboard.crud.index');
+    Route::post('/create', [CrudController::class, 'store'])->name('dashboard.crud.store');
+    Route::get('/edit/{id}', [CrudController::class, 'edit'])->name('dashboard.crud.edit');
+    Route::post('/update', [CrudController::class, 'update'])->name('dashboard.crud.update');
+    Route::get('/show/{id}', [CrudController::class, 'show'])->name('dashboard.crud.show');
+    Route::get('/destroy/{id}', [CrudController::class, 'destroy'])->name('dashboard.crud.destroy');
+});
+
+Route::group(['prefix' => 'book',], function () {
+
+    Route::get('/index', [CrudBookController::class, 'index'])->name('dashboard.crudbook.index');
+    Route::get('/create', [CrudBookController::class, 'create'])->name('dashboard.crudbook.create');
+    Route::post('/store', [CrudBookController::class, 'store'])->name('dashboard.crudbook.store');
+    Route::get('/edit/{id}', [CrudBookController::class, 'edit'])->name('dashboard.crudbook.edit');
+    Route::post('/update', [CrudBookController::class, 'update'])->name('dashboard.crudbook.update');
+    Route::get('/show/{id}', [CrudBookController::class, 'show'])->name('dashboard.crudbook.show');
+    Route::get('/destroy/{id}', [CrudBookController::class, 'destroy'])->name('dashboard.crudbook.destroy');
+});
+
 
