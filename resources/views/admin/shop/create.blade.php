@@ -20,7 +20,7 @@
                     @csrf
                     <div class="card">
                         <div class="card_header d-flex flex-wrap gap-3 justify-content-between p-4">
-                            <h2>Fruites Create</h2>
+                            <h2>Shop Create</h2>
                             <a href="{{ route('dashboard.fruite.index') }}" class="btn btn-outline-info"> <i
                                     class="fa fa-arrow-left">Back</i></a>
                         </div>
@@ -33,6 +33,25 @@
                                     <div class="text-danger">{{ $name }}</div>
                                 @enderror
                             </div>
+
+                            <div class="form-group mt-6">
+                                <label>Fruits name:</label>
+                            @foreach($fruites as $item) 
+                              <label for="gardining{{ $item->id}}">
+                                <input type="checkbox" value="{{ $item->id}}" id="gardining{{ $item->id}}" name="fruites_name[]">
+                                   {{ $item->fruites_name}}
+                                </label>
+                            @endforeach
+                                 
+                            </div>
+                            {{-- <div class="form-group mb-3">
+                                <label >Fruits name:</label>
+                                     <select class="form-control" name="fruites_name" >
+                                    @foreach($fruites as $item)
+                                        <option value="{{$item->id}}">{{$item->fruites_name}}</option>
+                                    @endforeach
+                                    </select>
+                                </div> --}}
                             <div class="from-group col-md-6">
                                 <label for="">Description</label>
                                 <input value="" type="text" name="discription" class="form-control" />

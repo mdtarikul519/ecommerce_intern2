@@ -40,7 +40,8 @@
                                           @foreach ($all_data as $item)
                                         
                                              <tr>
-                                                <td>{{ $item->name }}</td>
+                                              
+                                                <td>{{ $item->fruites_name }}</td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->description??'' }}</td>
                                                 

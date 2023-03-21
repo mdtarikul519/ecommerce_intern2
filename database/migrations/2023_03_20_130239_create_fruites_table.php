@@ -15,16 +15,16 @@ class CreateFruitesTable extends Migration
     {
         Schema::create('fruites', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100)->nullable();
+            $table->string('fruites_name',100)->nullable();
             $table->integer('price')->nullable();
             $table->string('image',100)->nullable();
             $table->string('description',100)->nullable();
             $table->timestamps();
         });
 
-        Schema::create('fruite_shop', function (Blueprint $table) {
+        Schema::create('fruites_shop', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('fruite_id')->nullable();
+            $table->bigInteger('fruites_id')->nullable();
             $table->bigInteger('shop_id')->nullable();
     
            });
@@ -39,5 +39,6 @@ class CreateFruitesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('fruites');
+        Schema::dropIfExists('fruite_shop');
     }
 }

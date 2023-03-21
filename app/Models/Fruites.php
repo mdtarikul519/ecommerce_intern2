@@ -8,7 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Fruites extends Model
 {
     use HasFactory;
-    public function shop(){
-        return $this->belongsToMany(Shop::class);
-    }
+   
 }

@@ -21,10 +21,10 @@ class FruiteController extends Controller
         // dd(request()->all());
         $data = new Fruites();
        
-        $data->name = request()->name;
+        $data->fruites_name = request()->fruites_name;
         $data->price = request()->price;
         $data->description = request()->description;
-        $data->shop()->attach(request()->shop);
+       
         $data->image = Storage::put('/crudFruites_upload', request()->file('image'));
         $data->save();
         return redirect()->route('dashboard.fruite.index');
@@ -40,14 +40,14 @@ class FruiteController extends Controller
     
     $data = Fruites::find(request()->id);
     // dd($data);
-    $data->name = request()->name;
+    $data->fruites_name = request()->fruites_name;
     $data->price = request()->price;
     $data->description = request()->description;
     $data->image = Storage::put('/crudFruites_upload',request()->file('image'));
-    $data->save();
-    if (request()->has('shop')) {
-      $data->shop()->sync(request()->shop);
-   }
+  //   $data->save();
+  //   if (request()->has('shop')) {
+  //     $data->shop()->sync(request()->shop);
+  //  }
     return redirect()->route('dashboard.fruite.index');
 
   }

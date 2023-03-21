@@ -27,8 +27,8 @@
                         <div class="card-body">
 
                             <div class="from-group col-md-6">
-                                <label for="">Name</label>
-                                <input value="" type="text" name="name" class="form-control" />
+                                <label for="">Fruites Name</label>
+                                <input value="" type="text" name="fruites_name" class="form-control" />
                                 @error('name')
                                     <div class="text-danger">{{ $name }}</div>
                                 @enderror

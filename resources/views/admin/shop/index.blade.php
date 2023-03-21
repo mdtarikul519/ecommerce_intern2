@@ -30,22 +30,35 @@
                                     <thead>
                                         <tr>
                                             <th>name</th>
+                                            <th>Fruites Name</th>
                                             <th>Description</th>
                                             <th>image</th>
                                             <th>Action</th>
+                                          
                                         </tr>
                                     </thead>
                                      <tbody>
                                           @foreach ($data as $item)
                                         
                                              <tr>
-                                                <td>{{ $item->shop_name }}</td>d>
+                                                <td>{{ $item->shop_name }}</td>
+                                                <td>
+
+                                                  @if($item->fruites)
+                                                    <ol>
+                                                        @foreach ($item->fruites as $fruite )
+                                                        <li>{{ $fruite->fruites_name }}</li>
+                                                        @endforeach
+                                                    </ol>
+                                                  @endif
+                                             </td>
                                                 <td>{{ $item->discription??'' }}</td>
                                                 
                                                 <td>
                                                     <img src="/{{ $item->image }}" height="100px" width="100px" alt="">
                                                   
                                                 </td>
+                                                <td>{{ $item->Fruites_name }}</td>
                                                 <td>
                                                     <a href="#" class="btn btn-sm btn-info">show</a>
                                                     <a href="{{ route('dashboard.shop.edit',$item->id) }}" class="btn btn-sm btn-warning mx-2">edit</a>
