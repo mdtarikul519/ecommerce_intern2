@@ -102,6 +102,22 @@
                         <li><a href="{{route('dashboard.crudbook.create')}}" key="t-level-2-1">create</a></li>
                     </ul>
                 </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2"><i class="bx bx-comment-dots"></i> Fruites crud</a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('dashboard.fruite.create')}}" key="t-level-2-1">create</a></li>
+                        <li><a href="{{route('dashboard.fruite.index')}}" key="t-level-2-1">index</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2"><i class="bx bx-comment-dots"></i> Shop crud</a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('dashboard.shop.create')}}" key="t-level-2-1">create</a></li>
+                        <li><a href="{{route('dashboard.shop.index')}}" key="t-level-2-1">index</a></li>
+                    </ul>
+                </li>
                 
             </ul>
         </li>

@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\UserUserController;
 use App\Http\Controllers\Website\WebsiteController;
 use App\Http\Controllers\Admin\CrudController;
+use App\Http\Controllers\Admin\FruiteController;
+use App\Http\Controllers\Admin\ShopController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -135,4 +137,27 @@ Route::group(['prefix' => 'book',], function () {
     Route::get('/destroy/{id}', [CrudBookController::class, 'destroy'])->name('dashboard.crudbook.destroy');
 });
 
+
+Route::group(['prefix' => 'fruits',], function () {
+
+    Route::get('/index', [FruiteController::class, 'index'])->name('dashboard.fruite.index');
+    Route::get('/create', [FruiteController::class, 'create'])->name('dashboard.fruite.create');
+    Route::post('/store', [FruiteController::class, 'store'])->name('dashboard.fruite.store');
+    Route::get('/edit/{id}', [FruiteController::class, 'edit'])->name('dashboard.fruite.edit');
+    Route::post('/update/{id}', [FruiteController::class, 'update'])->name('dashboard.fruite.update');
+    Route::get('/show/{id}', [FruiteController::class, 'show'])->name('dashboard.fruite.show');
+    Route::get('/destroy/{id}', [FruiteController::class, 'destroy'])->name('dashboard.fruite.destroy');
+});
+
+
+Route::group(['prefix' => 'shop',], function () {
+
+    Route::get('/index', [ShopController::class, 'index'])->name('dashboard.shop.index');
+    Route::get('/create', [ShopController::class, 'create'])->name('dashboard.shop.create');
+    Route::post('/store', [ShopController::class, 'store'])->name('dashboard.shop.store');
+    Route::get('/edit/{id}', [ShopController::class, 'edit'])->name('dashboard.shop.edit');
+    Route::post('/update/{id}', [ShopController::class, 'update'])->name('dashboard.shop.update');
+    Route::get('/show/{id}', [ShopController::class, 'show'])->name('dashboard.shop.show');
+    Route::get('/destroy/{id}', [ShopController::class, 'destroy'])->name('dashboard.shop.destroy');
+});
 
