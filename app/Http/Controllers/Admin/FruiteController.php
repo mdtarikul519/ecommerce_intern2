@@ -4,11 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Fruites;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class FruiteController extends Controller
 {
+
+  
+  public function details($id)
+  {
+      $data = Fruites::where('id', $id)->with('shopes')->first();
+      return view('admin.fruite.view', compact('data'));
+  }
+
     public function create(){
              return view('admin.fruite.create');    
     }

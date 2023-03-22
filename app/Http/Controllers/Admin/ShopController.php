@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ShopController extends Controller
 {
+
+ public function details($id){
+      $data = Shop::with('fruites')->find($id);
+       return view('admin.shop.view',compact('data'));
+  }
+
     public function create(){
         $fruites = Fruites::get();
         return view('admin.shop.create',compact('fruites'));

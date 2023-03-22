@@ -50,7 +50,7 @@
                                                   
                                                 </td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-info">show</a>
+                                                    <a href="{{ route('dashboard.fruite.details',$item->id) }}" class="btn btn-sm btn-info">Details</a>
                                                     <a href="{{ route('dashboard.fruite.edit',$item->id) }}" class="btn btn-sm btn-warning mx-2">edit</a>
                                                     <a href="#" class="btn btn-sm btn-danger">delete</a>
                                                 </td>

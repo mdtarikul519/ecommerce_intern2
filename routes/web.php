@@ -49,6 +49,7 @@ Route::group(['prefix' => 'contact',], function () {
     Route::get('/show/{id}', [ContactController::class, 'show'])->name('dashboard.contact.show');
     Route::get('/destroy/{id}', [ContactController::class, 'destroy'])->name('dashboard.contact.destroy');
 });
+
 Route::group(['prefix' => 'user',], function () {
 
     Route::get('index', [UserdController::class, 'index'])->name('dashboard.user.index');
@@ -145,7 +146,7 @@ Route::group(['prefix' => 'fruits',], function () {
     Route::post('/store', [FruiteController::class, 'store'])->name('dashboard.fruite.store');
     Route::get('/edit/{id}', [FruiteController::class, 'edit'])->name('dashboard.fruite.edit');
     Route::post('/update/{id}', [FruiteController::class, 'update'])->name('dashboard.fruite.update');
-    Route::get('/show/{id}', [FruiteController::class, 'show'])->name('dashboard.fruite.show');
+    Route::get('/details/{id}', [FruiteController::class, 'details'])->name('dashboard.fruite.details');
     Route::get('/destroy/{id}', [FruiteController::class, 'destroy'])->name('dashboard.fruite.destroy');
 });
 
@@ -157,7 +158,7 @@ Route::group(['prefix' => 'shop',], function () {
     Route::post('/store', [ShopController::class, 'store'])->name('dashboard.shop.store');
     Route::get('/edit/{id}', [ShopController::class, 'edit'])->name('dashboard.shop.edit');
     Route::post('/update/{id}', [ShopController::class, 'update'])->name('dashboard.shop.update');
-    Route::get('/show/{id}', [ShopController::class, 'show'])->name('dashboard.shop.show');
+    Route::get('/details/{id}', [ShopController::class, 'details'])->name('dashboard.shop.details');
     Route::get('/destroy/{id}', [ShopController::class, 'destroy'])->name('dashboard.shop.destroy');
 });
 

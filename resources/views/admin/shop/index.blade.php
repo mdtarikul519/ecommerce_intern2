@@ -60,7 +60,7 @@
                                                 </td>
                                                 <td>{{ $item->Fruites_name }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-info">show</a>
+                                                    <a href="{{ route('dashboard.shop.details',$item->id) }}" class="btn btn-sm btn-info">Detailes</a>
                                                     <a href="{{ route('dashboard.shop.edit',$item->id) }}" class="btn btn-sm btn-warning mx-2">edit</a>
                                                     <a href="{{ route('dashboard.shop.destroy',$item->id) }}" class="btn btn-sm btn-danger">delete</a>
                                                 </td>
