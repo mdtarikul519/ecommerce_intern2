@@ -10,8 +10,10 @@ use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\UserUserController;
 use App\Http\Controllers\Website\WebsiteController;
 use App\Http\Controllers\Admin\CrudController;
+use App\Http\Controllers\Admin\ExamController;
 use App\Http\Controllers\Admin\FruiteController;
 use App\Http\Controllers\Admin\ShopController;
+use App\Http\Controllers\Admin\StudentedController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -160,5 +162,27 @@ Route::group(['prefix' => 'shop',], function () {
     Route::post('/update/{id}', [ShopController::class, 'update'])->name('dashboard.shop.update');
     Route::get('/details/{id}', [ShopController::class, 'details'])->name('dashboard.shop.details');
     Route::get('/destroy/{id}', [ShopController::class, 'destroy'])->name('dashboard.shop.destroy');
+});
+
+Route::group(['prefix' => 'Studented',], function () {
+
+    Route::get('/index', [StudentedController::class, 'index'])->name('dashboard.studented.index');
+    Route::get('/create', [StudentedController::class, 'create'])->name('dashboard.studented.create');
+    Route::post('/store', [StudentedController::class, 'store'])->name('dashboard.studented.store');
+    Route::get('/edit/{id}', [StudentedController::class, 'edit'])->name('dashboard.studented.edit');
+    Route::post('/update/{id}', [StudentedController::class, 'update'])->name('dashboard.studented.update');
+    Route::get('/details/{id}', [StudentedController::class, 'details'])->name('dashboard.studented.details');
+    Route::get('/destroy/{id}', [StudentedController::class, 'destory'])->name('dashboard.studented.destroy');
+});
+
+Route::group(['prefix' => 'exam',], function () {
+
+    Route::get('/index', [ExamController::class, 'index'])->name('dashboard.exam.index');
+    Route::get('/create', [ExamController::class, 'create'])->name('dashboard.exam.create');
+    Route::post('/store', [ExamController::class, 'store'])->name('dashboard.exam.store');
+    Route::get('/edit/{id}', [ExamController::class, 'edit'])->name('dashboard.exam.edit');
+    Route::post('/update/{id}', [ExamController::class, 'update'])->name('dashboard.exam.update');
+    Route::get('/details/{id}', [ExamController::class, 'details'])->name('dashboard.exam.details');
+    Route::get('/destroy/{id}', [ExamController::class, 'destory'])->name('dashboard.exam.destroy');
 });
 

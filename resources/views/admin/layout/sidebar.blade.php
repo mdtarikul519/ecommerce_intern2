@@ -119,6 +119,24 @@
                     </ul>
                 </li>
                 
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2"><i class="bx bx-comment-dots"></i>Studented Crud</a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('dashboard.studented.create')}}" key="t-level-2-1">create</a></li>
+                        <li><a href="{{route('dashboard.studented.index')}}" key="t-level-2-1">index</a></li>
+                    </ul>
+                </li>
+                
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2"><i class="bx bx-comment-dots"></i>Studented Crud</a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('dashboard.exam.create')}}" key="t-level-2-1">create</a></li>
+                        <li><a href="{{route('dashboard.exam.index')}}" key="t-level-2-1">index</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </li>
     </ul>
