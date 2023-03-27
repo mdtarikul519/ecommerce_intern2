@@ -1,5 +1,3 @@
-
-
 @extends('admin.layout.dashboard_layout')
 
 @section('content')
@@ -19,8 +17,8 @@
                 </div>
             </div>
         </div>
-         
-         <div class="container">
+
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -29,35 +27,38 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>name</th>
-                                            <th>email</th>
+                                            <th>Exum_name</th>
                                             <th>Department</th>
-                                            <th>registation</th>
-                                            <th>image</th>
+                                            <th>Student_name</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                     <tbody>
-                                          @foreach ($data as $item)
-                                        
-                                             <tr>
-                                              
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->email }}</td>
+                                    <tbody>
+                                        @foreach ($data as $item)
+                                            <tr>
+
+                                                <td>{{ $item->exam_name }}</td>
                                                 <td>{{ $item->studentes->department }}</td>
 
-                                                <td>{{ $item->registation }}</td>
                                                 <td>
-                                                    <img src="/{{ $item->image }}" height="100px" width="100px" alt="">
-                                                  
+                                                    @if ($item->examstudentd)
+                                                        <ol>
+                                                            @foreach ($item->examstudentd as $student)
+                                                                <li>{{ $student->name }}</li>
+                                                            @endforeach
+                                                        </ol>
+                                                    @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('dashboard.fruite.details',$item->id) }}" class="btn btn-sm btn-info">Details</a>
-                                                    <a href="{{ route('dashboard.studented.edit',$item->id) }}" class="btn btn-sm btn-warning mx-2">edit</a>
-                                                    <a href="{{ route('dashboard.studented.destroy',$item->id) }}" class="btn btn-sm btn-danger">delete</a>
+                                                    <a href="{{ route('dashboard.fruite.details', $item->id) }}"
+                                                        class="btn btn-sm btn-info">Details</a>
+                                                    <a href="{{ route('dashboard.exam.edit', $item->id) }}"
+                                                        class="btn btn-sm btn-warning mx-2">edit</a>
+                                                    <a href="{{ route('dashboard.exam.destroy', $item->id) }}"
+                                                        class="btn btn-sm btn-danger">delete</a>
                                                 </td>
-                                            </tr> 
-                                          @endforeach
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -65,6 +66,6 @@
                     </div>
                 </div>
             </div>
-         </div>
+        </div>
     </div>
 @endsection

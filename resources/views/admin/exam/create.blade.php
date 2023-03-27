@@ -28,7 +28,7 @@
 
                             <div class="from-group col-md-6">
                                 <label for="">Exam_subject</label>
-                                <input value="" type="text" name="exam_subject" class="form-control" />
+                                <input value="" type="text" name="exam_name" class="form-control" />
                                 @error('name')
                                     <div class="text-danger">{{ $name }}</div>
                                 @enderror
@@ -43,10 +43,16 @@
                                 </select>
                             </div>
 
-                            <div class="from-group col-md-6">
-                                <label for="">Stduent_name</label>
-                                <input value="" type="text" name="student_name" class="form-control" />
-                    
+                            <div class="form-group mt-6">
+                                <label>Student name:</label>
+                                @foreach ($data as $item)
+                                    <label for="exam{{ $item->id }}">
+                                        <input type="checkbox" value="{{ $item->id }}" id="exam{{ $item->id }}"
+                                            name="student_name[]">
+                                        {{ $item->name }}
+                                    </label>
+                                @endforeach
+
                             </div>
 
                     

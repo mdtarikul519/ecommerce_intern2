@@ -12,4 +12,8 @@ class Exam extends Model
     public function studentes(){
           return $this->belongsTo(Student::class,'department','id');
     }
+
+    public function examstudentd(){
+        return $this->belongsToMany(Studented::class);
+    }
 }

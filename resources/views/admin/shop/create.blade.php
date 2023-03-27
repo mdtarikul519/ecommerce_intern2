@@ -36,18 +36,19 @@
 
                             <div class="form-group mt-6">
                                 <label>Fruits name:</label>
-                            @foreach($fruites as $item) 
-                              <label for="gardining{{ $item->id}}">
-                                <input type="checkbox" value="{{ $item->id}}" id="gardining{{ $item->id}}" name="fruites_name[]">
-                                   {{ $item->fruites_name}}
-                                </label>
-                            @endforeach
-                                 
+                                @foreach ($fruites as $item)
+                                    <label for="gardining{{ $item->id }}">
+                                        <input type="checkbox" value="{{ $item->id }}" id="gardining{{ $item->id }}"
+                                            name="fruites_name[]">
+                                        {{ $item->fruites_name }}
+                                    </label>
+                                @endforeach
+
                             </div>
                             {{-- <div class="form-group mb-3">
                                 <label >Fruits name:</label>
                                      <select class="form-control" name="fruites_name" >
-                                    @foreach($fruites as $item)
+                                    @foreach ($fruites as $item)
                                         <option value="{{$item->id}}">{{$item->fruites_name}}</option>
                                     @endforeach
                                     </select>
