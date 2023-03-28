@@ -27,9 +27,9 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Exum_name</th>
-                                            <th>Department</th>
-                                            <th>Student_name</th>
+                                            <th>Student name</th>
+                                            <th>Exam name</th>
+                                            <th>Marks</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -37,14 +37,11 @@
                                         @foreach ($data as $item)
                                             <tr>
 
-                                                <td>{{ $item->exam_name }}</td>
+                                                <td>{{ $item->studentname->name }}</td>
+                                                <td>{{ $item->examname->exam_name}}</td>
+                                                <td>{{ $item->mark}}</td>
 
-                                                  @if($item->studentes)
-                                                  <td>{{ $item->studentes->department }}</td>
-                                                  @endif
-                                
-                                               
-                                                <td>
+                                                {{-- <td>
                                                     @if ($item->examstudentd)
                                                         <ol>
                                                             @foreach ($item->examstudentd as $student)
@@ -52,7 +49,7 @@
                                                             @endforeach
                                                         </ol>
                                                     @endif
-                                                </td>
+                                                </td> --}}
                                                 <td>
                                                     <a href="{{ route('dashboard.fruite.details', $item->id) }}"
                                                         class="btn btn-sm btn-info">Details</a>

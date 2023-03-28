@@ -16,29 +16,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
-
-                {{-- <form action="" method="POST" enctype="multipart/form-data">
-                 @csrf
-
-                 <div class="card">
-                    <div class="card_header d-flex flex-wrap gap-3 justify-content-between p-4">
-                        <h2>Studented Create</h2>
-                        <a href="{{ route('dashboard.studented.index') }}" class="btn btn-outline-info"> <i
-                                class="fa fa-arrow-left">Back</i></a>
-                    </div>
-                    <div class="card_body">
-                         <div class="form-group col-md-6">
-                            level
-
-                         </div>
-                    </div>
-
-                 </div>
-
-             </form> --}}
-
-                <form action="{{ route('dashboard.exam.update', $editdata->id) }}" method="POST"
-                    enctype="multipart/form-data">
+                <form action="{{ route('dashboard.exam_result.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card">
                         <div class="card_header d-flex flex-wrap gap-3 justify-content-between p-4">
@@ -48,38 +26,49 @@
                         </div>
                         <div class="card-body">
 
-                            <div class="from-group col-md-6">
-                                <label for="">Exam_subject</label>
-                                <input value="{{ $editdata->exam_name }}" type="text" name="exam_name"
-                                    class="form-control" />
-                                @error('name')
-                                    <div class="text-danger">{{ $name }}</div>
-                                @enderror
-                            </div>
+                          
 
                             <div class="from-group col-md-6">
-                                <label for="">Department</label>
-                                <select class="form-control" name="department">
+                                <label for="">Student_id</label>
+                                <select class="form-control" name="student_id">
                                     @foreach ($all_data as $item)
-                                        <option {{ $editdata->department == $item->id ? 'selected' : '' }}
-                                            value="{{ $item->id }}">{{ $item->department }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
+                            <div class="from-group col-md-6">
+                                <label for="">exam_id</label>
+                                <select class="form-control" name="exam_id">
+                                    @foreach ($data as $item)
+                                        <option value="{{ $item->id }}">{{ $item->exam_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="from-group col-md-6">
+                                <label for="">Marks</label>
+                                <input value="" type="number" name="mark" class="form-control" />
+                                @error('name')
+                                    <div class="text-danger">{{ $name }}</div>
+                                @enderror
+                            </div>
+{{-- 
                             <div class="form-group mt-6">
                                 <label>Student name:</label>
                                 @foreach ($data as $item)
                                     <label for="exam{{ $item->id }}">
-                                        <input
-                                            {{ $editdata->examstudentd->firstwhere('id', '=', $item->id) ? 'checked' : '' }}
-                                            type="checkbox" value="{{ $item->id }}" id="exam{{ $item->id }}"
+                                        <input type="checkbox" value="{{ $item->id }}" id="exam{{ $item->id }}"
                                             name="student_name[]">
                                         {{ $item->name }}
                                     </label>
                                 @endforeach
 
-                            </div>
+                            </div> --}}
+
+                    
+
+
                         </div>
                         <div class="text-center card-footer">
                             <button class="btn btn-outline-info">submit</button>

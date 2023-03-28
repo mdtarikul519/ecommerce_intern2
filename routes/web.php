@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\UserUserController;
 use App\Http\Controllers\Website\WebsiteController;
 use App\Http\Controllers\Admin\CrudController;
 use App\Http\Controllers\Admin\ExamController;
+use App\Http\Controllers\Admin\ExamResultController;
 use App\Http\Controllers\Admin\FruiteController;
 use App\Http\Controllers\Admin\ShopController;
 use App\Http\Controllers\Admin\StudentedController;
@@ -175,6 +176,7 @@ Route::group(['prefix' => 'Studented',], function () {
     Route::get('/destroy/{id}', [StudentedController::class, 'destory'])->name('dashboard.studented.destroy');
 });
 
+   
 Route::group(['prefix' => 'exam',], function () {
 
     Route::get('/index', [ExamController::class, 'index'])->name('dashboard.exam.index');
@@ -186,3 +188,13 @@ Route::group(['prefix' => 'exam',], function () {
     Route::get('/destroy/{id}', [ExamController::class, 'destory'])->name('dashboard.exam.destroy');
 });
 
+Route::group(['prefix' => 'exam_result',], function () {
+
+    Route::get('/index', [ExamResultController::class, 'index'])->name('dashboard.exam_result.index');
+    Route::get('/create', [ExamResultController::class, 'create'])->name('dashboard.exam_result.create');
+    Route::post('/store', [ExamResultController::class, 'store'])->name('dashboard.exam_result.store');
+    Route::get('/edit/{id}', [ExamResultController::class, 'edit'])->name('dashboard.exam_result.edit');
+    Route::post('/update/{id}', [ExamResultController::class, 'update'])->name('dashboard.exam_result.update');
+    Route::get('/details/{id}', [ExamResultController::class, 'details'])->name('dashboard.exam_result.details');
+    Route::get('/destroy/{id}', [ExamResultController::class, 'destory'])->name('dashboard.exam_result.destroy');
+});
